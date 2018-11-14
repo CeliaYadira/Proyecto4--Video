@@ -1,0 +1,58 @@
+import gab.opencv.*;
+import processing.video.*;
+
+VE ve;
+Efecto efecto;
+PA pa;
+
+Capture video;
+OpenCV opencv;
+
+//Movies
+Movie movie1;
+Movie movie2;
+Movie movie3;
+Movie movie4;
+Movie movie5;
+
+PImage img1;
+PImage img2;
+PImage img3;
+
+PFont  font;
+
+void setup() {
+  size(640, 480);
+  video = new Capture(this, width, height);
+  opencv = new OpenCV(this, width, height); 
+
+  video.start();
+  
+  movie1 = new Movie(this,"movie1.mp4");
+  movie2 = new Movie(this,"movie2.mp4");
+  movie3 = new Movie(this,"movie3.mp4");
+  movie4 = new Movie(this,"movie4.mp4");
+  movie5 = new Movie(this,"movie5.mp4");
+  
+  
+  movie1.loop();
+  movie2.loop();
+  movie3.loop();
+  movie4.loop();
+  movie5.loop();
+  
+  //Imágenes
+  img1 = loadImage("img1.jpg");
+  img2 = loadImage("img2.png");
+  img3 = loadImage("img3.png");
+  
+  ve = new VE();
+  efecto = new Efecto();
+  pa = new PA();
+  
+}
+
+void draw() {
+  pa.pantallas();
+
+}
